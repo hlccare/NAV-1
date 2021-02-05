@@ -118,7 +118,30 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
+var hashMap = [{
+  logo: 'A',
+  logotype: 'text',
+  url: 'https://www.acfun.cn'
+}, {
+  logo: '../static/bilibili-logo.jpeg',
+  logotype: 'text',
+  url: 'https://bilibili.com'
+}];
+var $siteList = $('.site-list');
+var $lastLi = $siteList.find('.last');
+hashMap.forEach(function (node) {
+  var $li = $("<li>\n            <a href=\"".concat(node.url, "\">\n                    <div class=\"site\">\n                        <div class=\"logo\">").concat(url[8], "</div>\n                        <div class=\"link\">").concat(node.url, "</div>\n                    </div>\n                </a>\n        </li>"));
+});
+$('.add-btn').on('click', function (e) {
+  var url = window.prompt('新增网址').trim();
 
+  if (url.indexOf('http') !== 0) {
+    url = 'https://' + url;
+  }
+
+  console.log(url);
+  var $site = $("<li>\n            <a href=\"".concat(url, "\">\n                    <div class=\"site\">\n                        <div class=\"logo\">").concat(url[8], "</div>\n                        <div class=\"link\">").concat(url, "</div>\n                    </div>\n                </a>\n        </li>")).insertBefore($lastLi);
+});
 },{}],"C:/Users/DELL/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -147,7 +170,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56245" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52320" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
