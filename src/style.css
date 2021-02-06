@@ -46,6 +46,7 @@ body{
     background: #0282B9;
     color: white;
     font-size: 16px;
+    cursor: pointer;
 }
 
 @media (min-width: 500px){
@@ -73,6 +74,11 @@ body{
 }
 .site-list > li{
     margin-bottom: 20px;
+    transition: all 0.3s;
+}
+.site-list > li:hover{
+    margin-bottom: 20px;
+    transform: translateY(-3px);
 }
 @media (min-width: 500px){
     .site-list > li{
@@ -80,6 +86,7 @@ body{
     }
 }
 .site-list .site{
+    border-radius: 8px;
     width: 160px;
     display: flex;
     justify-content: center;
@@ -113,8 +120,11 @@ body{
 .site-list .site:hover > .del-icon{
     display: block;
 }
-
+.site-list .site:hover > .del-icon:hover{
+    
+}
 .site-list .add-btn{
+    border-radius: 8px;
     background: white;
     width: 160px;
     display: flex;
