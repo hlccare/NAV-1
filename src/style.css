@@ -14,9 +14,21 @@ body{
 .global-header{
     margin: 20px 20px;
 }
+@media (min-width: 500px){
+    .global-header{
+        margin: 40px 0 70px;
+    }
+}
 .search-form{
     display: flex;
     justify-content: space-between;
+}
+@media (min-width: 500px){
+    .search-form{
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 .search-form > input{
     width: 100%;
@@ -35,18 +47,37 @@ body{
     color: white;
     font-size: 16px;
 }
-.global-main{
 
+@media (min-width: 500px){
+    .global-main{
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 .site-list{
     margin: 20px 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+}
+@media (max-width: 500px){
+    .site-list{
+        justify-content: space-between;
+    }
+}
+@media (min-width: 500px){
+    .site-list{
+        margin-left: 0;
+        margin-right: -25px;
+    }
 }
 .site-list > li{
     margin-bottom: 20px;
-
+}
+@media (min-width: 500px){
+    .site-list > li{
+        margin-right: 25px;
+    }
 }
 .site-list .site{
     width: 160px;
@@ -56,6 +87,8 @@ body{
     align-items: center;
     background: white;
     padding: 20px 0;
+    position: relative;
+    cursor: pointer;
 }
 .site-list .site > .logo{
     width: 64px;
@@ -64,12 +97,23 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 64px;
+    text-transform: uppercase; /*将字母转换为大写形式*/
 }
 .site-list .site > .link{
     font-size: 14px;
     margin-top: 4px;
-
 }
+
+.site-list .site > .del-icon{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: none;
+}
+.site-list .site:hover > .del-icon{
+    display: block;
+}
+
 .site-list .add-btn{
     background: white;
     width: 160px;
